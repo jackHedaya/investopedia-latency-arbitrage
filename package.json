@@ -7,6 +7,10 @@
   "private": true,
   "dependencies": {
     "alpha_vantage_api_wrapper": "^0.1.1",
-    "datejs": "^1.0.0-rc3"
+    "cheerio": "^1.0.0-rc.2",
+    "mz": "^2.7.0",
+    "puppeteer": "^1.13.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   }
 }

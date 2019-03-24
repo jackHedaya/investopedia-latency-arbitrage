@@ -1,8 +1,12 @@
 const getPrice = require("./alpha-vantage/getPrice");
-const getOldPrice = require("./alpha-vantage/getOldPrice");
-const oldTime = require("./date/oldTime");
 
-// console.log(oldTime())
+require('events').EventEmitter.defaultMaxListeners = 125;
 
-getPrice(["MSFT", "AAPL", "NIO"]).then(r => console.log(r));
-getOldPrice(["MSFT", "AAPL", "NIO"]).then(r => console.log(r));
+(async function main() {
+  const tickers = await require("./getSaP");
+  
+  for (var ticker of tickers) {
+    getPrice(ticker)
+  }
+
+})()

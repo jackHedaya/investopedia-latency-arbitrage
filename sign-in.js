@@ -3,7 +3,9 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch({ headless: false, userDataDir: "/Users/jachedaya/Library/Application Support/Google/Chrome/Default" })
   const page = await browser.newPage()
-  
+
+  page.on("close", () => browser.close())
+
   const navigationPromise = page.waitForNavigation()
 
   await page.goto('https://www.investopedia.com/accounts/login.aspx?returnurl=https%3A%2F%2Fwww.investopedia.com%2Fsimulator%2Fgame%2F')

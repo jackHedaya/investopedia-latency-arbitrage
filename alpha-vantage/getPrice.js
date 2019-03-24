@@ -1,23 +1,26 @@
-const Alpha = require("alpha_vantage_api_wrapper").Alpha;
-
-const alpha = new Alpha(require("./creds"));
+const cheerio = require("cheerio");
+const request = require("request-promise");
 
 /**
  *
- * @param {string[] | string} ticker an individual ticker or multiple tickers seperated by spaces
+ * @param {string} ticker an valid ticker 
+ * @returns {Promise<Number>}
  */
-module.exports = ticker => (ticker.constructor === Array ? getPrices(ticker) : getPrice(ticker));
-
 async function getPrice(ticker) {
-  return alpha.stocks.quote(ticker).then(t => t["Global Quote"]["05. price"]);
-}
+  try {
+    const r = await request.get(`https://finance.yahoo.com/quote/${ticker}`);
 
-async function getPrices(tickers) {
-  let prices = {};
+    const $ = cheerio.load(r);
 
-  for (ticker of tickers) {
-    prices[`${ticker}`] = await getPrice(ticker);
+    const price = parseInt(
+      $("#mrt-node-Lead-3-QuoteHeader * span")
+        .eq(3)
+        .text()
+    );
+
+    return price;
+  } catch (e) {
+    console.error(`${ticker} failed`);
   }
-
-  return prices;
 }
+module.exports = getPrice;

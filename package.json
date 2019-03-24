@@ -1,0 +1,12 @@
+{
+  "name": "shiryah-stock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jack Hedaya <jackehedaya@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "alpha_vantage_api_wrapper": "^0.1.1",
+    "datejs": "^1.0.0-rc3"
+  }
+}

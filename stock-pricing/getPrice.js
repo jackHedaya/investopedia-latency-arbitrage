@@ -12,7 +12,7 @@ async function getPrice(ticker) {
 
     const $ = cheerio.load(r);
 
-    const price = parseInt(
+    const price = parseFloat(
       $("#mrt-node-Lead-3-QuoteHeader * span")
         .eq(3)
         .text()

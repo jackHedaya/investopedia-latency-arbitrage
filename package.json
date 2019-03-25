@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "alpha_vantage_api_wrapper": "^0.1.1",
     "cheerio": "^1.0.0-rc.2",
     "mz": "^2.7.0",
     "puppeteer": "^1.13.0",

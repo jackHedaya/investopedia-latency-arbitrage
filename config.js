@@ -2,7 +2,7 @@ module.exports = {
   /**
    * the tickers that will be traded back and forth
    */
-  tickers: [
+  TICKERS: [
     "CPRX",
     "AXSM",
     "YRD",

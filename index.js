@@ -7,14 +7,14 @@ const getInvestopediaPrice = require("./stock-pricing/getInvestopediaPrice");
 
 const buy = require("./trading/buy");
 
-const { tickers, WORKING_WITH, AMOUNT_OF_STOCKS } = require("./config");
+const { TICKERS, WORKING_WITH, AMOUNT_OF_STOCKS } = require("./config");
 
 /**
  * gives the max amount of stocks with allocated funds that the amount of stocks being traded
  * @param {number} stockPrice
  */
 function getQuantity(stockPrice) {
-  return WORKING_WITH / AMOUNT_OF_STOCKS / stockPrice;
+  return Math.floor(WORKING_WITH / AMOUNT_OF_STOCKS / stockPrice);
 }
 
 (async function main() {
@@ -24,7 +24,7 @@ function getQuantity(stockPrice) {
 
   const volatility = [];
 
-  for (var ticker of tickers) {
+  for (var ticker of TICKERS) {
     const real = await getPrice(ticker);
     const investopedia = await getInvestopediaPrice(ticker);
 

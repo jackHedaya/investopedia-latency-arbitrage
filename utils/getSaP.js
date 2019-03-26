@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const fs = require("mz/fs");
 
 /**
- * Async function that gets S&P 100 Index, caches to s&p.js, and returns the tickers.
+ * Async function that gets S&P 100 Index, caches to s&p-cache\.js, and returns the tickers.
  * @returns {string} tickers
  */
 module.exports = (async function() {

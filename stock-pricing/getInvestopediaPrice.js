@@ -6,6 +6,9 @@ const puppeteer = require("puppeteer");
  * @returns {Promise<Number>} the stock price
  */
 async function getInvestopediaPrice(ticker) {
+  /**
+   * @type {import("puppeteer").Browser}
+   */
   let browser = global.browser;
 
   const page = await browser.newPage();

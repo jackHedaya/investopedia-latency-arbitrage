@@ -5,6 +5,9 @@
  * @param {"Buy" | "Sell Cover"} action
  */
 async function transact(ticker, quantity, action) {
+  /**
+   * @type {import("puppeteer").Browser}
+   */
   let browser = global.browser;
 
   const page = await browser.newPage();
@@ -26,7 +29,7 @@ async function transact(ticker, quantity, action) {
 
   await navigationPromise;
 
-  // await page.close();
+  await page.close();
 }
 
 module.exports = transact;

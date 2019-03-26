@@ -1,5 +1,3 @@
-const puppeteer = require("puppeteer");
-
 /**
  * Gets investopedia stock price
  * @param {string} ticker a stock ticker

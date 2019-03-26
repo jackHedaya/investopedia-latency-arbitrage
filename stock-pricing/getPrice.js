@@ -3,8 +3,8 @@ const request = require("request-promise");
 
 /**
  *
- * @param {string} ticker an valid ticker 
- * @returns {Promise<Number>}
+ * @param {string} ticker a stock ticker 
+ * @returns {Promise<Number>} the stock price
  */
 async function getPrice(ticker) {
   try {
@@ -16,6 +16,7 @@ async function getPrice(ticker) {
       $("#mrt-node-Lead-3-QuoteHeader * span")
         .eq(3)
         .text()
+        .replace(/,/g, "")
     );
 
     return price;

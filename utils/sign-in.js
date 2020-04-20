@@ -15,13 +15,13 @@ const puppeteer = require('puppeteer');
   await page.waitForSelector('.row > .column-12 > .form-box > .form-item > #edit-email')
   await page.click('.row > .column-12 > .form-box > .form-item > #edit-email')
   
-  await page.waitForSelector('.row > .column-12 > .form-box > .form-item > #edit-email')
+  await page.waitForSelector('.row > .column-12 > .form-box > .form-item > #edit-email', '<email>')
   await page.click('.row > .column-12 > .form-box > .form-item > #edit-email')
   
-  await page.type('.row > .column-12 > .form-box > .form-item > #edit-email', 'lchen@nshahs.org')
+  await page.type('.row > .column-12 > .form-box > .form-item > #edit-email')
   
   await page.click('.row > .column-12 > .form-box > .form-item > #edit-password')
-  await page.type('.row > .column-12 > .form-box > .form-item > #edit-password', 'Crest4Kids!')
+  await page.type('.row > .column-12 > .form-box > .form-item > #edit-password', '<password>')
   
   await navigationPromise
 })()

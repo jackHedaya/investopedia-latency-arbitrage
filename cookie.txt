@@ -1,0 +1,1 @@
+Get cookie by opening Source Editor, navigating to Network on Investopedia and copying the cookie used in quote

@@ -1,2 +1,4 @@
-node_modules
-*-cache.js
+venv/
+chrome-data/
+.DS_Store
+.env
